@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Missão Artemis 🌊🚀</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #4e54c8, #8f94fb);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+
+        header{
+            height: 100vh;
+
+            background:
+            linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
+            url("{{ url_for('static', filename='imagens/moana.jpg') }}");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 20px;
+        }
+
+        header h1{
+            font-size: 80px;
+            color: #ffffff;
+
+            text-shadow:
+            0px 0px 15px #00d9ff,
+            0px 0px 30px #ff00ea;
+
+            animation: brilho 2s infinite alternate;
+        }
+
+        @keyframes brilho{
+
+            from{
+                text-shadow:
+                0px 0px 10px #00d9ff,
+                0px 0px 20px #ff00ea;
+            }
+
+            to{
+                text-shadow:
+                0px 0px 25px #00d9ff,
+                0px 0px 45px #ff00ea;
+            }
+
+        }
+
+        header p{
+            margin-top: 20px;
+
+            font-size: 26px;
+
+            width: 75%;
+
+            line-height: 1.6;
+
+            background: rgba(0,0,0,0.4);
+
+            padding: 20px;
+
+            border-radius: 20px;
+
+            backdrop-filter: blur(5px);
+        }
+
+        /* CONTEÚDO */
+
+        .conteudo{
+            padding: 60px 10%;
+        }
+
+        .card{
+            background: rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(10px);
+
+            padding: 35px;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            box-shadow: 0px 0px 25px rgba(0,0,0,0.3);
+        }
+
+        .card h2{
+            font-size: 45px;
+
+            margin-bottom: 25px;
+
+            color: #ffe66d;
+        }
+
+        .card p{
+            font-size: 22px;
+
+            line-height: 1.8;
+        }
+
+        /* GALERIA */
+
+        .titulo-galeria{
+            text-align: center;
+
+            margin-top: 50px;
+
+            font-size: 50px;
+
+            color: #fff;
+
+            text-shadow: 0px 0px 20px #00d9ff;
+        }
+
+        .galeria{
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+
+            gap: 25px;
+
+            padding: 50px 8%;
+        }
+
+        .galeria img{
+            width: 100%;
+
+            height: 280px;
+
+            object-fit: cover;
+
+            border-radius: 25px;
+
+            transition: 0.4s;
+
+            border: 4px solid rgba(255,255,255,0.3);
+
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+        }
+
+        .galeria img:hover{
+
+            transform: scale(1.05) rotate(1deg);
+
+            box-shadow:
+            0px 0px 20px #00d9ff,
+            0px 0px 40px #ff00ea;
+
+        }
+
+        /* FOOTER */
+
+        footer{
+            background: rgba(0,0,0,0.4);
+
+            text-align: center;
+
+            padding: 25px;
+
+            margin-top: 40px;
+
+            font-size: 20px;
+        }
+
+        /* RESPONSIVO */
+
+        @media(max-width: 768px){
+
+            header h1{
+                font-size: 45px;
+            }
+
+            header p{
+                width: 95%;
+                font-size: 18px;
+            }
+
+            .card p{
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>🌊 MISSÃO ARTEMIS 🚀</h1>
+
+        <p>
+            Quando a NASA encontra a Moana...
+            a Lua vira o novo oceano 🌕🌊
+        </p>
+
+    </header>
+
+    <!-- CONTEÚDO -->
+
+    <section class="conteudo">
+
+        <div class="card">
+
+            <h2>🌕 Objetivo da Missão</h2>
+
+            <p>
+                A missão Artemis quer levar humanos novamente à Lua,
+                explorar novos horizontes e preparar futuras viagens para Marte.
+                Mas aparentemente a Moana decidiu comandar essa missão
+                navegando pelo espaço com muita coragem e água do mar.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- GALERIA -->
+
+    <h2 class="titulo-galeria">🚀 Galeria Espacial da Moana 🌊</h2>
+
+    <div class="galeria">
+
+        <img src="{{ url_for('static', filename='imagens/7c77f638-87f3-41f9-bc17-76e562944d9d.jpeg') }}">
+
+        <img src="{{ url_for('static', filename='imagens/lua.jfif') }}">
+
+        <img src="{{ url_for('static', filename='imagens/R.jfif') }}">
+
+        <img src="{{ url_for('static', filename='imagens/spacex-starship.jpg') }}">
+
+        <img src="{{ url_for('static', filename='imagens/Artemis.jfif') }}">
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            🌊 Projeto Flask + GitHub + Azure + Energia da Moana 🚀
+        </p>
+
+    </footer>
+
+</body>
+</html>
